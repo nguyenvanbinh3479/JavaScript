@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bình Nguyễn</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<meta charset="utf-8">
+	<script language="javascript" src="js/demo.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/three.min.js"></script>
+    <!-- cookie -->
+    <script>
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+        alert("Welcome again " + user);
+    } else {
+       user = prompt("Please enter your name:","");
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
+    }
+}
+
+</script>
+</head>
+<body onload="checkCookie()">
+ <!-- <body onload="startTime()"> -->
+
+       <!--  <div id="timer"></div> -->
+<!-- 
+	<div id="header"></div>
+	<div id="content"></div>
+	<div id="footer"></div> -->
+<!--  <input type="button" onclick="alert('Xin chào các bạn')" value="Click Me"/> -->
+<!-- 207 --> 
+<!-- <input type="button" onclick="clearAlert()" value="Clear" /> -->
+<!--409 -->
+<!-- <input type="text" id="mesage" onkeyup="show_result()">
+<div id="result"></div>-->
+<!-- 417 -->
+<!-- <h1 oncopy="coppy()">chào mừng vạn đến với trang website<br>coppy dòng phía trên này</h1>
+ -->
+<!--424 -->
+<!-- a: <input type="text" id="a" onkeyup="tinh_tong()">
+b: <input type="text" id="b" onkeyup="tinh_tong()">
+ketqua: <input type="text" id="result"> -->
+<!-- 437 -->
+<!-- <form method="post" action="">
+    Username: <input type="text" value="" name="username" id="username"/> <br/>
+    Password: <input type="text" value="" name="password" id="password"/> <br/>
+    Re Password: <input type="text" value="" name="re-password" id="re-password"/> <br/>
+    <input type="submit" value="Register" onclick="return validate()" />        
+</form> -->
+<!-- 487 -->
+<!-- <input type="text" value="thẻ không cần lấy" class="website"/>
+    <div>
+        <input type="text" value="Thẻ Cần Lấy" class="website"/>
+        <input type="text" value="thẻ không cần lấy"/>
+    </div> -->
+<!--     <div id="content">Nội dung của thẻ DIV</div>
+    <input type="button" value="Lấy nội dung" id="get_content" onclick="get_content()" />
+    <input type="button" value="Thay đổi nội dung" id="set_content" onclick="set_content()" />
+   -->
+<!-- 753 -->
+
+   <!--  <a href="#" onclick="return openWindow()">Open</a>
+    <a href="#" onclick="return closeWindow()">Close</a>
+    <a href="#" onclick="return moveWindow()">Move</a>
+    <a href="#" onclick="return resizeWindow()">Resize</a> -->
+<!-- 789 -->
+    <!-- <a href="#" onclick="reloadpage()">load</a>
+    <a href="#" onclick="replacepage()">replace</a>
+    <a href="#" onclick="hrefpage()">href</a>
+    <a href="#" onclick="assignpage()">newpage</a> -->
+<!-- 1168 -->
+<!-- <input type="button" id="clickme" onclick="showMessage(this)" value="Click Me" /> -->
+<!--w3schools--><!--w3schools--><!--w3schools--><!--w3schools--><!--w3schools--><!--w3schools--><!--w3schools--><!--w3schools-->
+<p id="time"></p>
+<button type="button" onclick="time()">date/time</button>
+<!-- thay đổi nội dung-->
+<p id="demo">thay đổi</p>
+<button type="button" onclick="noiDung()">clickme</button>
+<!-- thay đổi kiểu html(css)-->
+<p id="mode">hi guy</p>
+<button type="button" onclick="change()">Click</button>
+<!--ẩn hiện phẩn tử-->
+<p id="one">hide me or show me</p>
+<button type="button" onclick="hide()">hide</button>
+<button type="button" onclick="show()">show</button>
+<!--thư mục <js--></js-->
+<p id="second">chưa thay đổi</p>
+<button type="button" onclick="myFunction()">Try it</button>
+<!--hàm-->
+<p id="model"></p>
+<script>
+    function newFunction(a,b) {
+        return a*b
+    }
+    document.getElementById('model').innerHTML = newFunction(5,6);
+</script>
+<p id="delv"></p>
+<script>
+    function toCelsius(f) {
+        return (5+5)*(f-16);
+    }
+    document.getElementById('delv').innerHTML = toCelsius(36);
+</script>
+<!-- đối tượng -->
+<p id="per"></p>
+<script>
+    document.getElementById('per').innerHTML = person.firstName + ' is ' + person.age + ' years old.';
+</script>
+<!-- chiều dài chuỗi -->
+<p id="gat"></p>
+<script>
+    var txt="jhwadohaiwdnaknckn.as";
+    document.getElementById("gat").innerHTML = txt.length;
+</script>
+<!-- vị trí đầu chuỗi -->
+<p id="now"></p>
+<script>
+    document.getElementById('now').innerHTML = pos;
+</script>
+<!-- vị trí cuối chuỗi -->
+<p id="then"></p>
+<script>
+    document.getElementById('then').innerHTML = pis;
+</script>
+<!-- tìm kiếm chuỗi -->
+<p id="show"></p>
+<script>
+    document.getElementById('show').innerHTML = pos;
+</script>
+<!-- lấy 1 phần của chuỗi -->
+<p id="that"></p>
+<script>
+    document.getElementById("that").innerHTML = slice;
+</script>
+<!-- thay nội dung chuỗi -->
+<p id="chame">hello you, yes you</p>
+<button type="button" onclick="came()">click</button>
+<!-- in hoa -->
+<p id="shower">shit</p>
+<button type="button" onclick="uppercase()">try</button>
+<!-- kết hợp chuỗi -->
+<p id="ten"></p>
+<script>
+    document.getElementById("ten").innerHTML = text3;
+</script>
+<!-- trích suất ký tự chuỗi -->
+<p id="elevent"></p>
+<script>
+    document.getElementById("elevent").innerHTML = emt.charAt(0);
+</script>
+<!-- tách chuỗi -->
+<p id="type"></p>
+<script>
+    document.getElementById('type').innerHTML = texxt;
+</script>
+<!-- trả 1 số về 1 chuỗi -->
+<p id="chod"></p>
+<script>
+    document.getElementById('chod').innerHTML = x.toString() + '<br>' + (123).toString() + '<br>' + (100 + 23).toString();
+</script>
+<!-- math -->
+<p id="math"></p>
+<script>
+    document.getElementById("math").innerHTML = d;
+</script>
+<!-- random -->
+<p id="edom"></p>
+<script>
+    document.getElementById("edom").innerHTML =
+Math.floor(Math.random() * 101);
+</script>
+<!-- date -->
+<p id="dt"></p>
+<script>
+    var d = new Date();
+    document.getElementById("dt").innerHTML = d.getFullYear();
+</script>
+<!-- mảng -->
+<p id="ca"></p>
+<p id="arr"></p>
+<p id="leng"></p>
+<p id="ul"></p>
+<p id="al"></p>
+<!-- thêm phần tử vào mảng dùng push //pop để loại phần tử cuối//push thêm phần tử-->
+<script>
+    var car, len, te2xt, i;
+    car = ["honda", "suzuki", "ferrary"];
+    fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fLen = fruits.length;
+    text = "<ul>";
+    for (i = 0; i < fLen; i++) {
+        text += "<li>" + fruits[i] + "</li>";
+    }
+    text += "</ul>";
+    document.getElementById("ca").innerHTML = car;
+    document.getElementById("arr").innerHTML = car[1];
+    document.getElementById("leng").innerHTML = car.length;
+    document.getElementById("ul").innerHTML = text;
+</script>
+<!-- tuổi -->
+<input id="agew" value="18">
+<button onclick="ageFunction()">try it</button>
+<p id="age"></p>
+<script>
+    function ageFunction() {
+        var age, voteable;
+        age = number(document.getElementById("age").value);
+        if (isNaN(age)) {
+            voteable = "Input is ont a number";
+        }
+        else {
+            voteable = (age < 18)? "too young" : "too enough";
+        }
+        document.getElementById("age").innerHTML =voteable;
+    }
+</script>
+<!-- hoạt ảnh -->
+<p>
+    <button onclick="myMove()">clickme</button>
+</p>
+<h1>hoạt ảnh</h1>
+<div id="contaner">
+    <div id="anh"></div>
+</div>
+<script>
+    function myMove() {
+        var elem = document.getElementById("anh");
+        var pos = setInterval(frame, 5);
+        function frame() {
+            if(pos == 350) {
+                clearInterval(id);
+            }
+            else {
+                pos++;
+                elem.style.top = pos + "px";
+                elem.style.left = pos + "px";
+            }
+        }
+    }
+</script>
+
+<h2 onclick="this.innerHTML = 'hello'">clickme</h2>
+<!-- sự kiện -->
+<div onmouseover="mOver(this)" onmouseout="mOut(this)" 
+style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+Mouse Over Me</div>
+
+<script>
+function mOver(obj) {
+    obj.innerHTML = "Thank You"
+}
+
+function mOut(obj) {
+    obj.innerHTML = "Mouse Over Me"
+}
+</script>
+
+
+<div onmousedown="mDown(this)" onmouseup="mUp(this)"
+style="background-color:#D94A38;width:90px;height:20px;padding:40px;">
+Click Me</div>
+
+<script>
+function mDown(obj) {
+    obj.style.backgroundColor = "#1ec5e5";
+    obj.innerHTML = "Release Me";
+}
+
+function mUp(obj) {
+    obj.style.backgroundColor="#D94A38";
+    obj.innerHTML="Thank You";
+}
+</script>
+<!-- sự kiện -->
+<button id="myBtn" style="width: 100px;height:30px;">Try it</button>
+<p id="ovo"></p>
+
+<script>
+var x = document.getElementById("myBtn");
+x.addEventListener("click", myFunction);
+x.addEventListener("click", someOtherFunction);
+x.addEventListener("click", nextfunction);
+x.addEventListener("mouseover", over);
+x.addEventListener("mouseout", out);
+
+function myFunction() {
+    alert ("Hello World!");
+    document.getElementById("ovo").innerHTML += "Clicked!<br>"; 
+}
+
+function someOtherFunction() {
+    alert ("This function was also executed!");
+}
+function nextfunction() {
+    alert ("ok now you can turn off this!");
+}
+function over() {
+    document.getElementById("ovo").innerHTML += "Moused over!<br>"; 
+}
+function out() {
+    document.getElementById("ovo").innerHTML += "Moused out!<br>"; 
+}
+</script>
+
+<!-- phương thức mousemove -->
+
+<div id="myDIV" style="background-color:#D94A38">This div element has an onmousemove event handler that displays a random number every time you move your mouse inside this orange field.
+</div>
+
+<p id="mnb"></p>
+
+<script>
+document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+
+function myFunction() {
+    document.getElementById("mnb").innerHTML = Math.random()*100;
+}
+
+</script>
+<!-- vị trí -->
+<h3>The window.location object</h3>
+
+<input type="button" value="Load new document" onclick="newDoc()">
+
+<script>
+function newDoc() {
+    window.location.assign("https://www.google.com")
+}
+</script>
+<!-- prompt -->
+<button onclick="myFunction()">Try it</button>
+
+<p id="demon"></p>
+
+<script>
+function myFunction() {
+    var txt;
+    var person = prompt("Please enter your name:", "Harry Potter");
+    if (person == null || person == "") {
+        txt = "User cancelled the prompt.";
+    } else {
+        txt = "Hello " + person + "! How are you today?";
+    }
+    document.getElementById("demon").innerHTML = txt;
+}
+</script>
+
+<!-- time -->
+<p>A script on this page starts this clock:</p>
+
+<p id="demont"></p>
+
+<script>
+var myVar = setInterval(myTimer);
+
+function myTimer() {
+    var d = new Date();
+    document.getElementById("demont").innerHTML = d.toLocaleTimeString();
+}
+</script>
+
+<!-- AJAX -->
+<!-- JSON -->
+
+
+</body>
+<!-- hoạt ảnh -->
+<style>
+#contaner {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#anh {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: red;
+}
+</style>
+</html> 
